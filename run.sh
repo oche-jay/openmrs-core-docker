@@ -1,5 +1,4 @@
 #!/bin/bash
-chmod 777 /var/lib/tomcat7/openmrs-runtime.properties
 service mysql start
 mysql -uroot -e "CREATE DATABASE openmrs"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON * . * TO 'root'@'%'"
