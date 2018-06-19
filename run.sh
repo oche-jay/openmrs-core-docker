@@ -1,5 +1,5 @@
 #!/bin/bash
-service mysql start
+
 mysql -uroot -e "CREATE DATABASE openmrs"
 mysql -uroot -e "GRANT ALL PRIVILEGES ON * . * TO 'root'@'%'"
 mysql -uroot -e "UPDATE mysql.user SET Password=PASSWORD('test') WHERE User='root'"
