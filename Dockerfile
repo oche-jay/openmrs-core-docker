@@ -1,5 +1,5 @@
 # FROM google/debian:wheezy
-FROM tomcat:7.0
+FROM tomcat:7-jre8
 
 ENV JAVA_OPTS="-XX:PermSize=512m -XX:MaxPermSize=256m"
 RUN apt-get update
