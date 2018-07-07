@@ -1,5 +1,5 @@
 # FROM google/debian:wheezy
-FROM tomcat:8.0
+FROM tomcat:7.0
 
 ENV JAVA_OPTS="-XX:PermSize=1024m -XX:MaxPermSize=512m"
 ADD openmrs-runtime.properties /var/lib/tomcat7/openmrs-runtime.properties
