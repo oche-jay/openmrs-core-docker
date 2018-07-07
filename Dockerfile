@@ -1,7 +1,7 @@
 # FROM google/debian:wheezy
 FROM tomcat:7.0
 
-ENV JAVA_OPTS="-XX:PermSize=1024m -XX:MaxPermSize=512m"
+ENV JAVA_OPTS="-XX:PermSize=512m -XX:MaxPermSize=256m"
 RUN apt-get update
 RUN curl -L http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_Platform_2.1.3/openmrs.war/download \
        -o /usr/local/tomcat/webapps/openmrs.war
