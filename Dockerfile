@@ -1,16 +1,15 @@
-FROM google/debian:wheezy
+# FROM google/debian:wheezy
+FROM tomcat:8.0
 
 ADD openmrs-runtime.properties /var/lib/tomcat7/openmrs-runtime.properties
 ADD run.sh /root/run.sh
 
-RUN apt-get update; \
-  apt-get install -y curl openjdk-7-jre tomcat7; \
-  curl -L http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_Platform_2.1.3/openmrs.war/download \
-       -o /var/lib/tomcat7/webapps/openmrs.war; \
-  apt-get install -y mysql-server; \
-  mkdir /var/lib/OpenMRS; \
-  chown tomcat7:tomcat7 /var/lib/tomcat7/openmrs-runtime.properties /var/lib/OpenMRS; \
-  chmod +x /root/run.sh
+RUN apt-get update
+RUN curl -L http://sourceforge.net/projects/openmrs/files/releases/OpenMRS_Platform_2.1.3/openmrs.war/download \
+       -o /var/lib/tomcat7/webapps/openmrs.war
+RUN mkdir /var/lib/openmrs
+RUN chown tomcat7:tomcat7 /var/lib/tomcat7/openmrs-runtime.properties /var/lib/openmrs
+RUN chmod +x /root/run.sh
 
 EXPOSE 8080
 
