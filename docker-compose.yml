@@ -3,7 +3,6 @@ version: '2.1'
 services:
   openmrs-referenceapplication:
     container_name: openmrs
-    restart: "always"
     image: openmrs/openmrs-reference-application-distro:2.9.0
     ports:
       - "8080:8080"
